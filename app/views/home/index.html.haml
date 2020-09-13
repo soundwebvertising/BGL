@@ -1,16 +1,58 @@
+.jumbotron.jumbotron-fluid
+  .container
+    %center
+      %h1
+        Bobbi's Guitar Lessons
+      %h5
+        Bringing Guitars Out of the Closet All Over The World!
 
+.card-group
+  .card-body
+    %h1
+      .fa.fa-graduation-cap
+    = Course.count 
+    Online Courses
+    .row
+    Guitar Courses
+  .card-body
+    %h1
+      .fa.fa-chalkboard-teacher
+    = Course.distinct.count(:user_id) 
+    Expert Instructors
+    .row
+    Find The Right Instructor For You
+  .card-body
+    %h1
+      .fa.fa-user-graduate
+    = User.count 
+    Active Learners
+    .row
+    Join The cCommunity
+  .card-body
+    %h1
+      .fa.fa-infinity
+    = Course.count 
+    Lifetime Access
+    .row
+    Learn On Your Schedule
 
-
-
-%h1 
-  Bobbi's Guitar Lessons
+%hr
 %h2
-  Bringing Guitars Out of the Closet All Over The World!
+  Popular Courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
 
-= link_to root_path, class: 'btn btn-success' do
-  .fa.fa-home
-  Homepage
+%hr
+%h2
+  Top Rated Courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
 
-= link_to courses_path, class: 'btn btn-success' do
-  .fa.fa-guitar
-  Courses
+%hr
+%h2
+  Latest Courses 
+.card-columns
+  - @latest_courses.each do |course|
+    = render 'courses/course', course: course

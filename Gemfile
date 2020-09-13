@@ -61,3 +61,6 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 gem 'devise'
 gem 'faker'
+
+#bgl gem files added 9/3/2020
+gem 'friendly_id', '~> 5.2.4'
