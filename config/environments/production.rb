@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #below two lines added for production deployment to heroku 10/14/2020
+  config.action_mailer.default_url_options = { host: 'https://bobbisguitarlessons.herokuapp.com/' }
+  #https://bobbisguitarlessons.herokuapp.com/
 
   # Code is not reloaded between requests.
   config.cache_classes = true
