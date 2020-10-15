@@ -5,8 +5,13 @@
 
   .form-inputs
     = f.input :title
-    = f.label :title
+    = f.label :Description
     = f.rich_text_area :description
+    %small= f.error :description, class: "text-danger"
+    = f.input :short_description
+    = f.input :language, collection: [ "English", "Spanish", "German" , "Russian" ]
+    = f.input :level, collection: [ "Beginner", "Intermediate", "Advanced" ]
+    = f.input :price
 
   .form-actions
     = f.button :submit
