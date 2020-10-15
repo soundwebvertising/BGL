@@ -64,3 +64,6 @@ gem 'faker'
 
 #bgl gem files added 9/3/2020
 gem 'friendly_id', '~> 5.2.4'
+
+#bgl gem files added 10/14/2020
+gem 'ransack'
