@@ -71,3 +71,6 @@ gem 'ransack'
 
 # added Oct 18, 2020
 gem 'public_activity'
+
+# added Oct 20, 2020 lesson 47
+gem "rolify"
