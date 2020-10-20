@@ -1,0 +1,27 @@
+%hr 
+%footer{ style: 'background-color: #af1616;' }
+  .container
+    .row
+      .col-md 
+        .row
+        Copyright
+        ©
+        = Time.now.year 
+        .row
+        CoursePlatform 1.0.0 
+        .row
+        .fa.fa-envelope
+        = mail_to 'soundwebvertising@gmail.com'
+        .row
+      .col-md4
+
+      .col-md4
+        .row
+        Privacy Policy
+        .row
+        About Us
+        .row
+        Terms and Conditions
+        .row
+        = link_to "Teach on BGL", new_course_path
+%br

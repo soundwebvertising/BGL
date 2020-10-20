@@ -67,3 +67,7 @@ gem 'friendly_id', '~> 5.2.4'
 
 #bgl gem files added 10/14/2020
 gem 'ransack'
+
+
+# added Oct 18, 2020
+gem 'public_activity'

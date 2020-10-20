@@ -1,10 +1,17 @@
 .jumbotron.jumbotron-fluid
   .container
-    %center
-      %h1
-        Bobbi's Guitar Lessons
-      %h5
-        Bringing Guitars Out of the Closet All Over The World!
+    %h1
+      Bobbi's Guitar Lessons
+    %h5
+      Bringing Guitars Out of the Closet All Over The World!
+    %p 
+    - if current_user
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :title_or_short_description_cont, class: 'form-control-sm', style: 'float: left; width 150px;', placeholder: 'Find A Course'
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              %span.fa.fa-search{"aria-hidden" => "true"}
 
 .card-group
   .card-body

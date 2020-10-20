@@ -1,4 +1,5 @@
-%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+/%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+%nav.navbar.navbar-expand-lg.navbar-dark{ style: 'background-color: #af1616;' }
   %a.navbar-brand{:href => "/"}
     .fa.fa-guitar
     BGL
@@ -24,19 +25,29 @@
             .fa.fa-users
             Users
 
-
-      .form-inline.my-2.my-lg-0
-        = form_tag(courses_path, method: :get) do
-          .input-group
-            = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
-            %span.input-group-append
-              %button.btn.btn-primary.btn-sm{:type => "submit"}
-                %span.fa.fa-search{"aria-hidden" => "true"}
+      /Search in navbar
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :title_or_short_description_cont, class: 'form-control-sm', style: 'float: left; width 150px;'
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              %span.fa.fa-search{"aria-hidden" => "true"}
+      /.form-inline.my-2.my-lg-0
+      /  = form_tag(courses_path, method: :get) do
+      /    .input-group
+      /      = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+      /      %span.input-group-append
+      /        %button.btn.btn-primary.btn-sm{:type => "submit"}
+      /          %span.fa.fa-search{"aria-hidden" => "true"}
       %ul.navbar-nav.mr-right
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
           = link_to root_path, class: 'nav-link' do
             .fa.fa-guitar
             Blog
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(home_activity_path)}"}
+          = link_to home_activity_path, class: 'nav-link' do
+            .fa.fa-bell
+            Activity
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             %b= current_user.email
