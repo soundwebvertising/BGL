@@ -74,3 +74,6 @@ gem 'public_activity'
 
 # added Oct 20, 2020 lesson 47
 gem "rolify"
+
+# added Oct 21, 2020 lesson 50
+gem "pundit"
